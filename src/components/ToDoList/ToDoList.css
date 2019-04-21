@@ -1,0 +1,19 @@
+.ToDoList {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.ToDoList p {
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+.CompletedToDo {
+    color: #ccc;
+    text-decoration: line-through;
+}

@@ -1,0 +1,29 @@
+.Button {
+    display: inline-block;
+    height: 30px;
+    width: 65px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    color: #fff;
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.Button:disabled {
+    background: #ccc;
+    color: #000;
+    cursor: not-allowed;
+}
+
+.add {
+    background: #2884f6;
+}
+
+.completed {
+    background: #32CD32;
+}
+
+.deleted {
+    background: #DC143C;
+}

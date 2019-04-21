@@ -1,0 +1,12 @@
+.InputToDo {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.InputToDo input {
+  width: 250px;
+  height: 25px;
+  font-size: 14px;
+}
