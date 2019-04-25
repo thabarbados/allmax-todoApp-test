@@ -8,8 +8,6 @@ class ToDoList extends Component {
     constructor(props) {
         super(props);
         this.state = { ToDoArr: [] };
-        this.CompleteHandler = this.CompleteHandler.bind(this);
-        this.DeleteHandler = this.DeleteHandler.bind(this);
     }
 
 
@@ -37,7 +35,7 @@ class ToDoList extends Component {
     }
 
 
-    async componentDidMount() {
+    componentDidMount = async() => {
         try {
             const response = await axios.get(`https://allmax-todo-test.firebaseio.com/todos.json`)
 
@@ -68,14 +66,14 @@ class ToDoList extends Component {
                     <div key={item.id} className="ToDoList">
                         <Button
                             className="Button completed"
-                            onClick={(index) => this.CompleteHandler(item.index)}
+                            onClick={() => this.CompleteHandler(item.index)}
                             disabled={item.disabled}>Completed
                         </Button>
                         <p className={item.styleName}>{item.name}</p>
                         <Button
                             url={item.id}
                             className="Button deleted"
-                            onClick={(id, index) => this.DeleteHandler(item.id, item.index)}>
+                            onClick={() => this.DeleteHandler(item.id, item.index)}>
                             Delete
                         </Button>
                     </div>)}

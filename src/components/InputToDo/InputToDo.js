@@ -7,8 +7,6 @@ class ToDoInput extends Component {
     constructor(props) {
         super(props);
         this.state = { todo: '' };
-        this.ToDoChangeHandler = this.ToDoChangeHandler.bind(this);
-        this.SubmitHandler = this.SubmitHandler.bind(this);
     }
 
     validate = () => {
@@ -19,7 +17,7 @@ class ToDoInput extends Component {
     }
 
 
-    async SubmitHandler() {
+    SubmitHandler = async() => {
         const todos = {
             key: this.state.todo
         };
@@ -33,16 +31,26 @@ class ToDoInput extends Component {
         this.setState({ todo: '' })
     }
 
-    ToDoChangeHandler(event) {
+    ToDoChangeHandler = (event) => {
         this.setState({ todo: event.target.value });
     }
 
     render() {
         return (
             <div className="InputToDo">
-                <input type="text" name="todo" value={this.state.todo}
-                    onChange={this.ToDoChangeHandler} />
-                <Button type="submit" className="Button add" disabled={!this.validate()} onClick={this.SubmitHandler}>Add</Button>
+                <input 
+                    type="text" 
+                    name="todo" value={this.state.todo}
+                    onChange={this.ToDoChangeHandler} 
+                />
+                <Button 
+                    type="submit" 
+                    className="Button add" 
+                    disabled={!this.validate()} 
+                    onClick={this.SubmitHandler}
+                >
+                Add
+                </Button>
             </div>
         );
     }
