@@ -40,7 +40,9 @@ class ToDoInput extends Component {
             <div className="InputToDo">
                 <input 
                     type="text" 
-                    name="todo" value={this.state.todo}
+                    name="todo" 
+                    placeholder = "enter task here"
+                    value={this.state.todo}
                     onChange={this.ToDoChangeHandler} 
                 />
                 <Button 
